@@ -74,7 +74,13 @@
 			}
 			function getSlimeProgess() {
 				var savedGame = JSON.parse(localStorage.getItem("slimeSave"));
-				if (typeof savedGame.blue_slimes !== "undefined") score = savedGame.blue_slimes;
+				if (typeof savedGame.blue_slimes !== "undefined") blue_slimes = savedGame.blue_slimes;
+				if (typeof savedGame.blue_slimes_per_second !== "undefined") blue_slimes_per_second = savedGame.blue_slimes_per_second;
+				if (typeof savedGame.blue_slime_aggro_cost !== "undefined") blue_slime_aggro_cost = savedGame.blue_slime_aggro_cost;
+				if (typeof savedGame.blue_slime_agitators !== "undefined") blue_slime_agitators = savedGame.blue_slime_agitators;
+			}
+			window.onload = function() {
+				getSlimeProgess();
 			}
 			setInterval(function() {
 				blue_slimes = blue_slimes + blue_slime_agitators;
