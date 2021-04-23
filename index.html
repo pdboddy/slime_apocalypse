@@ -134,8 +134,8 @@
 
 			function resetSlimeProgress() {
 				if (confirm("Are you sure you want to reset your progress?")) {
-					var slimeSave = {};
-					localStorage.setItem("slimeSave", JSON.stringify(slimeSave));
+					var gameSave = {};
+					localStorage.setItem("gameSave", JSON.stringify(gameSave));
 					location.reload();
 				}
 			}
