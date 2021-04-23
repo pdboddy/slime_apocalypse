@@ -38,7 +38,7 @@
 	</header>
 	<body>
 		<p><span id="ticker_text">Click the Blue Slime to get started.<br>Saves every five minutes or you can press the save button.</span></p>
-		<button class="button noselect" onClick="saveSlimeProgress();" ontouchend="document.activeElement.blur()">Save Progress</button>
+		<button class="button noselect" onClick="saveSlimeProgress();" ontouchend="deselectButton();">Save Progress</button>
 		<button class="button noselect" onClick="resetSlimeProgress();">Reset Progress</button><hr/>
 		<div class="blueSlimeContainer">
 			<p class="noselect">Blue Slimes: <span id="blue_slimes">0</span><br>Blue Slimes/s: <span id="blue_slimes_per_second">0</span></p>
@@ -103,6 +103,9 @@
 			setInterval (function() {
 				saveSlimeProgress();
 			}, 300000); //Saves every 5 minutes.
+			function deselectButton(); {
+				document.activeElement.blur()
+			}
 		</script>
 	</body>
 	<footer>
