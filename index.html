@@ -37,11 +37,12 @@
 		</style>
 	</header>
 	<body>
-		<p><span id="ticker_text">Click the Blue Slime to get started.</span></p>
-		<button class="button" onClick="saveSlimeProgress();">Save Progress</button>
+		<p><span id="ticker_text">Click the Blue Slime to get started.<br>Saves every five minutes or you can press the save button.</span></p>
+		<button class="button noselect" onClick="saveSlimeProgress();" onTouchEnd="document.activeElement.blur();">Save Progress</button>
+		<button class="button noselect" onClick="resetSlimeProgress();">Reset Progress</button><hr/>
 		<div class="blueSlimeContainer">
 			<p class="noselect">Blue Slimes: <span id="blue_slimes">0</span><br>Blue Slimes/s: <span id="blue_slimes_per_second">0</span></p>
-			<img class="img" src="images/Blue_Slime.gif" onClick="addToBlueSlimes(1)"/>
+			<img class="img noselect" src="images/Blue_Slime.gif" onClick="addToBlueSlimes(1)"/>
 			<button class="button noselect" onClick="addToBlueSlimeAggro(1)">Slime Agitators [<span id="blue_slime_aggro_cost">10</span>] => <span id="blue_slime_agitators">0</span>
 			</button>
 		</div>
@@ -78,6 +79,15 @@
 				if (typeof savedGame.blue_slimes_per_second !== "undefined") blue_slimes_per_second = savedGame.blue_slimes_per_second;
 				if (typeof savedGame.blue_slime_aggro_cost !== "undefined") blue_slime_aggro_cost = savedGame.blue_slime_aggro_cost;
 				if (typeof savedGame.blue_slime_agitators !== "undefined") blue_slime_agitators = savedGame.blue_slime_agitators;
+				document.getElementById("blue_slime_agitators").textContent = blue_slime_agitators;
+				document.getElementById("blue_slime_aggro_cost").textContent = blue_slime_aggro_cost;
+			}
+			function resetSlimeProgress() {
+				if (confirm("Are you sure you want to reset your progress?")) {
+					var slimeSave = {};
+					localStorage.setItem("slimeSave", JSON.stringify(slimeSave));
+					location.reload();
+				}
 			}
 			window.onload = function() {
 				getSlimeProgess();
