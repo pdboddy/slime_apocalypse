@@ -74,7 +74,7 @@
 					if (game.blue_slimes >= this.cost[index]) {
 						game.blue_slimes -= this.cost[index];
 						this.count[index]++;
-						this.cost[index] = Math.round(this.cost[index] * 1.11);
+						this.cost[index] = Math.trunc(this.cost[index] * 1.11);
 						display.updateBlueSlimes();
 						display.updateShops();
 					}
