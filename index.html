@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<header>
+		<title>Slime Apocalypse</title>
+		<link rel="shortcut icon" type="image/gif" href="images/Slimecon.gif"/>
+		<style type="text/css">
+			body {
+				color: #f2f2f2;
+				background-color: #808080;
+			}
+			.blueSlimeContainer {
+				background-color: #000080;
+				padding: 5px;
+				width: 10%;
+			}
+			.img:hover {
+				transform: scale(1.25);
+			}
+			.img:active {
+				transform: scale(0.97);
+			}
+			.button {
+				border-radius: 10px;
+			}
+			.button:hover {
+				transform: scale(1.11);
+			}
+			.button:active {
+				transform: scale(0.98);
+			}
+			.noselect {
+				-webkit-user-select: none; /* Safari */
+				-moz-user-select: none; /* Mozilla */
+				-ms-user-select: none; /* Internment Exploder */
+				user-select: none;
+			}
+		</style>
+	</header>
+	<body>
+		<p><span id="ticker_text">Click the Blue Slime to get started.</span></p>
+		<button class="button" onClick="saveSlimeProgress();">Save Progress</button>
+		<div class="blueSlimeContainer">
+			<p class="noselect">Blue Slimes: <span id="blue_slimes">0</span><br>Blue Slimes/s: <span id="blue_slimes_per_second">0</span></p>
+			<img class="img" src="images/Blue_Slime.gif" onClick="addToBlueSlimes(1)"/>
+			<button class="button noselect" onClick="addToBlueSlimeAggro(1)">Slime Agitators [<span id="blue_slime_aggro_cost">10</span>] => <span id="blue_slime_agitators">0</span>
+			</button>
+		</div>
+		<script>
+			var blue_slimes = 0;
+			function addToBlueSlimes(amount) {
+				blue_slimes = blue_slimes + amount;
+				document.getElementById("blue_slimes").textContent = blue_slimes;
+			}
+			var blue_slime_agitators = 0;
+			var blue_slime_aggro_cost = 10;
+			function addToBlueSlimeAggro(amount) {
+				if (blue_slimes >= blue_slime_aggro_cost) {
+					blue_slimes = blue_slimes - blue_slime_aggro_cost;
+					document.getElementById("blue_slimes").textContent = blue_slimes;
+					blue_slime_agitators = blue_slime_agitators + amount;
+					document.getElementById("blue_slime_agitators").textContent = blue_slime_agitators;
+					blue_slime_aggro_cost = blue_slime_aggro_cost + amount;
+					document.getElementById("blue_slime_aggro_cost").textContent = blue_slime_aggro_cost;
+				}
+			}
+			function saveSlimeProgress() {
+				var slimeSave = {
+					blue_slimes: blue_slimes,
+					blue_slimes_per_second: blue_slimes_per_second,
+					blue_slime_aggro_cost: blue_slime_aggro_cost,
+					blue_slime_agitators: blue_slime_agitators
+				};
+				localStorage.setItem("slimeSave", JSON.stringify(slimeSave));
+			}
+			function getSlimeProgess() {
+				var savedGame = JSON.parse(localStorage.getItem("slimeSave"));
+				if (typeof savedGame.blue_slimes !== "undefined") score = savedGame.blue_slimes;
+			}
+			setInterval(function() {
+				blue_slimes = blue_slimes + blue_slime_agitators;
+				document.getElementById("blue_slimes").textContent = blue_slimes;
+				document.getElementById("blue_slimes_per_second").textContent = blue_slime_agitators;
+				document.title = blue_slimes + " - Averting Slime Apocalypse!"
+			}, 1000); // Updates blue slimes by number of agitators every 1 second.
+			setInterval (function() {
+				saveSlimeProgress();
+			}, 300000); //Saves every 5 minutes.
+		</script>
+	</body>
+	<footer>
+		<p>Saving the Slimes from Extinction...</p>
+	</footer>
+</html>
