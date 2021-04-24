@@ -19,14 +19,14 @@ var game = {
 var upgrades = {
 	name: ["Agitators", "Multifingers", "Feeders"],
 	count: [0, 0, 0],
-	cost: [10, 50, 1000],
-	income: [1, 2.5, 100],
+	cost: [5, 30, 700],
+	income: [1, 5, 100],
 
 	buying: function(index) {
 		if (game.blue_slimes >= this.cost[index]) {
 			game.blue_slimes -= this.cost[index];
 			this.count[index]++;
-			this.cost[index] = Math.ceil(this.cost[index] * 1.11);
+			this.cost[index] = Math.ceil(this.cost[index] * 1.21);
 			display.updateBlueSlimes();
 			display.updateShops();
 		}
