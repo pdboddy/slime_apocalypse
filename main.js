@@ -43,7 +43,7 @@ var display = {
 	updateShops: function() {
 		document.getElementById("blueSlimeUpgrades").innerHTML = "";
 		for (i = 0; i < upgrades.name.length; i++) {
-			document.getElementById("blueSlimeUpgrades").innerHTML += '<table><tr><td><button class="button noselect" style="width:100px;" onClick="upgrades.buying('+i+')">'+upgrades.name[i]+' <br/>[<span>'+upgrades.cost[i]+'</span>] => <span>'+upgrades.count[i]+'</span></td></tr></table>';
+			document.getElementById("blueSlimeUpgrades").innerHTML += '<table><tr><td><button class="button noselect" style="width:125px;" onClick="upgrades.buying('+i+')">'+upgrades.name[i]+' <br/><span>x'+upgrades.income[i]+' [<span>'+upgrades.cost[i]+'</span>] => <span>'+upgrades.count[i]+'</span></td></tr></table>';
 		}
 	}
 };
