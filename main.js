@@ -17,10 +17,10 @@ var game = {
 };
 
 var upgrades = {
-	name: ["Agitators", "Multifingers", "Feeders"],
-	count: [0, 0, 0],
-	cost: [5, 30, 700],
-	income: [1, 5, 100],
+	name: ["Agitators", "Multifingers", "Feeders", "Love Potion N°9"],
+	count: [0, 0, 0, 0],
+	cost: [5, 30, 700, 4000],
+	income: [1, 5, 100, 500],
 
 	buying: function(index) {
 		if (game.blue_slimes >= this.cost[index]) {
