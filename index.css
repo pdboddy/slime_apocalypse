@@ -1,0 +1,30 @@
+body {
+	color: #f2f2f2;
+	background-color: #808080;
+}
+.blueSlimeContainer {
+	background-color: #000080;
+	padding: 5px;
+	width: 10%;
+}
+.img:hover {
+	transform: scale(1.25);
+}
+.img:active {
+	transform: scale(0.97);
+}
+.button {
+	border-radius: 10px;
+}
+.button:hover {
+	transform: scale(1.11);
+}
+.button:active {
+	transform: scale(0.98);
+}
+.noselect {
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Mozilla */
+	-ms-user-select: none; /* Internment Exploder */
+	user-select: none;
+}
