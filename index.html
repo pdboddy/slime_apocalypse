@@ -2,24 +2,58 @@
 <html lang="en">
 	<header>
 		<title>Slime Apocalypse</title>
-		<link rel="icon" type="image/x-icon" href="images/Slimecon.png"/>
 		<link rel="stylesheet" href="index.css"/>
+		<script type="text/javascript" src="index.js"></script>
 	</header>
 	<body>
-		<p><span id="ticker_text">Click the Blue Slime to get started.<br>Saves every five minutes or you can press the save button.<br>Upgrades explanation: First number is income, the number in square brackets is current cost for the next upgrade, and the last number is current number of upgrades owned.</span></p>
-		<hr/>
-		<div class="blueSlimeContainer">
-			<p class="noselect">Blue Slimes: <span id="blue_slimes">0</span><br>Blue Slimes/s: <span id="blue_slimes_per_second">0</span></p>
-			<img class="img noselect" src="images/Blue_Slime.gif" onClick="game.addToBlueSlimes(game.clickValue)"/>
-			<span id="blueSlimeUpgrades"></span>
+		<div class="first">
+			<div class="ticker">
+				<div class="mark">
+					<span>Slime Apocalypse is undergoing renovations.</span>
+					<span>&#160;</span>
+					<span>&#160;</span>
+					<span>Hi Amy! <3</span>
+				</div>
+			</div>
+			<div class="second">
+				<button class="navigation noselect" onClick="navigate('slimes')" id="b1">Slimes</button>
+				<button class="navigation noselect" onClick="navigate('automation')" id="b2">Automation</button>
+				<button disabled class="navigation noselect" onClick="navigate('upgrades')" id="b3">Upgrades</button>
+				<button disabled class="navigation noselect" onClick="navigate('screen_4')" id="b4">Screen 4</button>
+				<button disabled class="navigation noselect" onClick="navigate('screen_5')" id="b5">Screen 5</button>
+				<button disabled class="navigation noselect" onClick="navigate('screen_6')" id="b6">Screen 6</button><hr/>
+				<button class="navigation noselect" onClick="saveGame();">Save Progress</button>
+				<button class="navigation noselect" onClick="resetSlimeProgress();">Reset Progress</button><hr/>
+			</div>
+			<div class="third" id="slimes">
+				<table style="border:1px solid #000000">
+					<caption>Your&#160;Slime&#160;Reserves</caption>
+					<tr>
+						<td rowspan="2" style="border:1px solid #000000"><img class="img noselect" src="images/blue_slime.gif" onClick="game.addToBlueSlimes(game.clickValue)"/></td>
+						<td style="border:1px solid #000000; padding:3px;">Blue Slimes: <span id="blue_slimes">0</span></td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #000000; padding:3px;">Blue Slimes/s: <span id="blue_slimes_per_second">0</span></td>
+					</tr>
+				</table>
+			</div>
+			<div class="third" id="automation" style="display:none">
+				<span id="blueSlimeAutomation">
+				</span>		
+
+			</div>
+			<div class="third" id="upgrades" style="display:none">Upgrading Clicking and Automation
+			</div>
+			<div class="third" id="screen_4" style="display:none">Screen 4
+			</div>
+			<div class="third" id="screen_5" style="display:none">Screen 5
+			</div>
+			<div class="third" id="screen_6" style="display:none">Screen 6
+			</div>
 		</div>
-		<script src="main.js"></script>
-		<br/>
-		<button class="button noselect" onClick="saveGame();">Save Progress</button>
-		<button class="button noselect" onClick="resetSlimeProgress();">Reset Progress</button><hr/>
 	</body>
 	<footer>
-		<p>Slime Apocalypse v0.1</p>
+		<p>Slime Apocalypse v0.2</p>
 		Copyright &#169 2021 Peter David Boddy
 	</footer>
 </html>
