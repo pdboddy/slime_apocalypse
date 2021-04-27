@@ -100,7 +100,7 @@ var display = {
 	updateBlueSlimes: function() {
 		document.getElementById("blue_slimes").textContent = game.blue_slimes;
 		document.getElementById("blue_slimes_per_second").textContent = game.getBlueSlimesPerSecond();
-		document.title = game.blue_slimes + " - Averting Slime Apocalypse!";
+		document.title = game.blue_slimes + game.blue_slimes_per_second + "/s - Averting Slime Apocalypse!";
 	},
 
 	updateShops: function() {
