@@ -4,9 +4,6 @@ function navigate(tab) {
 	document.getElementById("slimes").style.display = "none"
 	document.getElementById("automation").style.display = "none"
 	document.getElementById("upgrades").style.display = "none"
-	document.getElementById("screen_4").style.display = "none"
-	document.getElementById("screen_5").style.display = "none"
-	document.getElementById("screen_6").style.display = "none"
 	if (tab == "slimes") {
 		if (active_tab == "slimes") {
 			active_tab = ""
@@ -30,30 +27,6 @@ function navigate(tab) {
 		}
 		active_tab = "upgrades"
 		document.getElementById("upgrades").style.display = "block"
-	}
-	if (tab == "screen_4") {
-		if (active_tab == "screen_4") {
-			active_tab = ""
-			return
-		}
-		active_tab = "screen_4"
-		document.getElementById("screen_4").style.display = "block"
-	}
-	if (tab == "screen_5") {
-		if (active_tab == "screen_5") {
-			active_tab = ""
-			return
-		}
-		active_tab = "screen_5"
-		document.getElementById("screen_5").style.display = "block"
-	}
-	if (tab == "screen_6") {
-		if (active_tab == "screen_6") {
-			active_tab = ""
-			return
-		}
-		active_tab = "screen_6"
-		document.getElementById("screen_6").style.display = "block"
 	}
 } // Use this function to call the different DIV screens.
 
@@ -80,6 +53,12 @@ var game = {
 };
 
 var automation = {
+	tooltip: [
+		"Agitators are the base form of slime multiplication.",
+		"Pesterizers are more efficient than the agitators, but come at a higher cost.",
+		"Threefers are more expensive still, but offer one of the best automation multipliers.",
+		"The penultimate in slime multiplication, slappers also come with a delightful sound."
+	],
 	name: ["Agitators", "Pesterizers", "Threefers", "Slappers"],
 	count: [0, 0, 0, 0],
 	cost: [5, 30, 700, 4000],
@@ -104,12 +83,12 @@ var display = {
 	},
 
 	updateShops: function() {
-		document.getElementById("blueSlimeAutomation").innerHTML = "";
+		document.getElementById("blueSlimeAutomation").textContent = "";
 		for (i = 0; i < automation.name.length; i++) {
-			document.getElementById("blueSlimeAutomation").innerHTML += '<table style="background-color: #000080; width: 15%;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img class="img" onClick="automation.buying('+i+')" src="images/'+automation.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.name[i]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">x'+automation.income[i]+' multiplier</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.cost[i]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.count[i]+' owned</td></tr></table>';
+			document.getElementById("blueSlimeAutomation").innerHTML += '<table style="background-color: #000080; width: 15%;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+automation.tooltip[i]+'"class="img" onClick="automation.buying('+i+')" src="images/'+automation.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.name[i]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">x'+automation.income[i]+' multiplier</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.cost[i]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.count[i]+' owned</td></tr></table>';
 		}
 	}
-};
+}; // Add a tooltip section to the array above, and add it as a title to the images to create an easy tooltip.
 
 function saveGame() {
 	var gameSave = {
@@ -153,7 +132,20 @@ function resetSlimeProgress() {
 		localStorage.setItem("gameSave", JSON.stringify(gameSave));
 		location.reload();
 	}
+	alert("Your progress has been reset!");
 }
+
+var bttn1 = document.getElementById("b1");
+var bttn2 = document.getElementById("b2");
+var bttn3 = document.getElementById("b3");
+var bttn98 = document.getElementById("b98");
+var bttn99 = document.getElementById("b99");
+bttn1.addEventListener("click", function(){navigate('slimes'); });
+bttn2.addEventListener("click", function(){navigate('automation')});
+bttn3.addEventListener("click", function(){navigate('upgrades')});
+bttn98.addEventListener("click", function(){saveGame(); alert("Your progress has been saved!")});
+bttn99.addEventListener("click", function(){resetSlimeProgress();});
+
 
 window.onload = function() {
 	loadGame();

@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-	<header>
+	<head>
 		<title>Slime Apocalypse</title>
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 		<link rel="stylesheet" href="index.css"/>
-		<script type="text/javascript" src="index.js"></script>
-	</header>
+	</head>
 	<body>
 		<div class="first">
 			<div class="ticker">
 				<div class="mark">
 					<span>Slime Apocalypse is undergoing renovations.</span>
-					<span>&#160;</span>
-					<span>&#160;</span>
+					<span>  &#160;</span>
+					<span>  &#160;</span>
 					<span>Hi Amy! <3</span>
+					<span>  &#160;</span>
+					<span>  &#160;</span>
+					<span>The game saves every 5 minutes.</span>
 				</div>
 			</div>
 			<div class="second">
-				<button class="navigation noselect" onClick="navigate('slimes')" id="b1">Slimes</button>
-				<button class="navigation noselect" onClick="navigate('automation')" id="b2">Automation</button>
-				<button disabled class="navigation noselect" onClick="navigate('upgrades')" id="b3">Upgrades</button>
-				<button disabled class="navigation noselect" onClick="navigate('screen_4')" id="b4">Screen 4</button>
-				<button disabled class="navigation noselect" onClick="navigate('screen_5')" id="b5">Screen 5</button>
-				<button disabled class="navigation noselect" onClick="navigate('screen_6')" id="b6">Screen 6</button><hr/>
-				<button class="navigation noselect" onClick="saveGame();">Save Progress</button>
-				<button class="navigation noselect" onClick="resetSlimeProgress();">Reset Progress</button><hr/>
+				<button class="navigation noselect" id="b1">Slimes</button>
+				<button class="navigation noselect" id="b2">Automation</button>
+				<button disabled class="navigation noselect" id="b3">Upgrades</button>
+				<hr/>
+				<button class="navigation noselect" id="b98">Save Progress</button>
+				<button class="navigation noselect" id="b99">Reset Progress</button><hr/>
 			</div>
 			<div class="third" id="slimes">
 				<table style="border:1px solid #000000">
@@ -52,6 +52,7 @@
 			<div class="third" id="screen_6" style="display:none">Screen 6
 			</div>
 		</div>
+		<script type="text/javascript" src="index.js"></script>
 	</body>
 	<footer>
 		<p>Slime Apocalypse v0.2</p>
