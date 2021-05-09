@@ -20,17 +20,17 @@
 			</div>
 			<div class="second">
 				<button class="navigation noselect" id="b1">Slimes</button>
-				<button class="navigation noselect" id="b2">Automation</button>
+				<button disabled class="navigation noselect" id="b2">Automation</button>
 				<button disabled class="navigation noselect" id="b3">Upgrades</button>
 				<hr/>
 				<button class="navigation noselect" id="b98">Save Progress</button>
 				<button class="navigation noselect" id="b99">Reset Progress</button><hr/>
 			</div>
 			<div class="third" id="slimes">
-				<table style="border:1px solid #000000">
+				<table style="border:1px solid #000000;">
 					<caption>Your&#160;Slime&#160;Reserves</caption>
 					<tr>
-						<td rowspan="2" style="border:1px solid #000000"><img class="img noselect" src="images/Blue_Slime.gif" onClick="game.addToBlueSlimes(game.clickValue)"/></td>
+						<td rowspan="2" style="border:1px solid #000000"><img class="img noselect" id="p1" src="images/Blue_Slime.gif"/></td>
 						<td style="border:1px solid #000000; padding:3px;">Blue Slimes: <span id="blue_slimes">0</span></td>
 					</tr>
 					<tr>
@@ -39,9 +39,8 @@
 				</table>
 			</div>
 			<div class="third" id="automation" style="display:none">
-				<span id="blueSlimeAutomation">
-				</span>		
-
+				<span>Automating Slime Reproduction<br/><img class="noselect" id="p11" src="images/Blue_Slime.gif"/></span>
+				<span id="blueSlimeAutomation"></span>
 			</div>
 			<div class="third" id="upgrades" style="display:none">Upgrading Clicking and Automation
 			</div>

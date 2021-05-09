@@ -85,7 +85,7 @@ var display = {
 	updateShops: function() {
 		document.getElementById("blueSlimeAutomation").textContent = "";
 		for (i = 0; i < automation.name.length; i++) {
-			document.getElementById("blueSlimeAutomation").innerHTML += '<table style="background-color: #000080; width: 15%;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+automation.tooltip[i]+'"class="img" onClick="automation.buying('+i+')" src="images/'+automation.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.name[i]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">x'+automation.income[i]+' multiplier</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.cost[i]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.count[i]+' owned</td></tr></table>';
+			document.getElementById("blueSlimeAutomation").innerHTML += '<table style="background-color: #000080;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+automation.tooltip[i]+'"class="img" onClick="automation.buying('+i+')" src="images/'+automation.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.name[i]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">x'+automation.income[i]+' multiplier</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.cost[i]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+automation.count[i]+' owned</td></tr></table>';
 		}
 	}
 }; // Add a tooltip section to the array above, and add it as a title to the images to create an easy tooltip.
@@ -123,6 +123,7 @@ function loadGame() {
 				automation.income[i] = savedGame.automationIncome[i];
 			}
 		}
+		if (typeof savedGame.blue_1st !== "undefined") game.blue_1st = savedGame.blue_1st;
 	}
 }
 
@@ -140,22 +141,36 @@ var bttn2 = document.getElementById("b2");
 var bttn3 = document.getElementById("b3");
 var bttn98 = document.getElementById("b98");
 var bttn99 = document.getElementById("b99");
+var pic1 = document.getElementById("p1");
 bttn1.addEventListener("click", function(){navigate('slimes'); });
 bttn2.addEventListener("click", function(){navigate('automation')});
 bttn3.addEventListener("click", function(){navigate('upgrades')});
 bttn98.addEventListener("click", function(){saveGame(); alert("Your progress has been saved!")});
 bttn99.addEventListener("click", function(){resetSlimeProgress();});
-
+pic1.addEventListener("click", function(){game.addToBlueSlimes(game.clickValue);});
 
 window.onload = function() {
 	loadGame();
 	display.updateBlueSlimes();
 	display.updateShops();
+	if (game.blue_slimes >= 5) {
+		document.getElementById("b2").disabled = false;
+	};
+	if (game.blue_slimes >= 1000000) {
+		document.getElementById("b3").disabled = false;
+	};
+
 };
 
 setInterval(function() {
 	game.blue_slimes += game.getBlueSlimesPerSecond();
 	display.updateBlueSlimes();
+	if (game.blue_slimes >= 5) {
+		document.getElementById("b2").disabled = false;
+	};
+	if (game.blue_slimes >= 1000000) {
+		document.getElementById("b3").disabled = false;
+	};
 }, 1000); // Updates currencies every 1 second.
 
 setInterval (function() {
