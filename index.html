@@ -20,8 +20,11 @@
 			</div>
 			<div class="second">
 				<button class="navigation noselect" id="b1">Slimes</button>
-				<button disabled class="navigation noselect" id="b2">Automation</button>
 				<button disabled class="navigation noselect" id="b3">Upgrades</button>
+				<button disabled style="display:none;" class="navigation noselect" id="b2">Automation</button>
+				<button disabled style="display:none;" class="navigation noselect" id="b4">Efficiency</button>
+				<hr/>
+				<button disabled class="navigation noselect" id="b97">Achievements</button>
 				<hr/>
 				<button class="navigation noselect" id="b98">Save Progress</button>
 				<button class="navigation noselect" id="b99">Reset Progress</button><hr/>
@@ -30,21 +33,37 @@
 				<table style="border:1px solid #000000;">
 					<caption>Your&#160;Slime&#160;Reserves</caption>
 					<tr>
-						<td rowspan="2" style="border:1px solid #000000"><img class="img noselect" id="p1" src="images/Blue_Slime.gif"/></td>
-						<td style="border:1px solid #000000; padding:3px;">Blue Slimes: <span id="blue_slimes">0</span></td>
+						<td title="Adorable, ain't he?" rowspan="3" style="border:1px solid #000000"><img class="img noselect" id="p1" src="images/Blue_Slime.gif"/></td>
+						<td title="Total blue slimes." style="border:1px solid #000000; padding:3px;">Blue Slimes: <span id="blue_slimes">0</span></td>
 					</tr>
 					<tr>
-						<td style="border:1px solid #000000; padding:3px;">Blue Slimes/s: <span id="blue_slimes_per_second">0</span></td>
+						<td title="Total slimes per click." style="border:1px solid #000000; padding:3px;">Blue Slimes/c: <span id="blue_slimes_per_click">0</span></td>
+					</tr>
+					<tr>
+						<td title="Total slimes per second." style="border:1px solid #000000; padding:3px;">Blue Slimes/s: <span id="blue_slimes_per_second">0</span></td>
+					</tr>
+					<tr style="display:none" id="pink_slimes_table_01">
+						<td title="Adorable, ain't she?" rowspan="3" style="border:1px solid #000000"><img class="img noselect" id="p2" src="images/Pink_Slime.gif"/></td>
+						<td title="Total pink slimes." style="border:1px solid #000000; padding:3px;">Pink Slimes: <span id="pink_slimes">0</span></td>
+					</tr>
+					<tr style="display:none" id="pink_slimes_table_02">
+						<td title="Total slimes per click." style="border:1px solid #000000; padding:3px;">Pink Slimes/c: <span id="pink_slimes_per_click">0</span></td>
+					</tr>
+					<tr style="display:none" id="pink_slimes_table_03">
+						<td title="Total slimes per second." style="border:1px solid #000000; padding:3px;">Pink Slimes/s: <span id="pink_slimes_per_second">0</span></td>
 					</tr>
 				</table>
 			</div>
 			<div class="third" id="automation" style="display:none">
-				<span>Automating Slime Reproduction<br/><img class="noselect" id="p11" src="images/Blue_Slime.gif"/></span>
+				<span>Automating Slime Reproduction<br/><img class="noselect" src="images/Blue_Slime.gif"/></span>
 				<span id="blueSlimeAutomation"></span>
 			</div>
-			<div class="third" id="upgrades" style="display:none">Upgrading Clicking and Automation
+			<div class="third" id="upgrades" style="display:none">
+				<span>Clicking Upgrades<br/><img class="noselect" src="images/Blue_Slime.gif"/></span>
+				<span id="blueSlimeUpgrades"></span>
 			</div>
-			<div class="third" id="screen_4" style="display:none">Screen 4
+			<div class="third" id="efficiencies" style="display:none">
+				<span>Clicking and Automation Efficiency Upgrades</span>
 			</div>
 			<div class="third" id="screen_5" style="display:none">Screen 5
 			</div>
@@ -54,7 +73,7 @@
 		<script type="text/javascript" src="index.js"></script>
 	</body>
 	<footer>
-		<p>Slime Apocalypse v0.2</p>
+		<p>Slime Apocalypse v0.4</p>
 		Copyright &#169 2021 Peter David Boddy
 	</footer>
 </html>
