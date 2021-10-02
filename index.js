@@ -101,7 +101,7 @@ var blueautomation = {
 		if (game.blue_slimes >= this.cost[index]) {
 			game.blue_slimes -= this.cost[index];
 			this.count[index]++;
-			this.cost[index] = Math.ceil(this.cost[index] * 1.21);
+			this.cost[index] = Math.ceil(this.cost[index] * 1.01);
 			display.updateBlueSlimes();
 			display.updateBlueShops();
 		}
@@ -124,7 +124,7 @@ var pinkautomation = {
 		if (game.pink_slimes >= this.cost[index]) {
 			game.pink_slimes -= this.cost[index];
 			this.count[index]++;
-			this.cost[index] = Math.ceil(this.cost[index] * 1.22);
+			this.cost[index] = Math.ceil(this.cost[index] * 1.02);
 			display.updatePinkSlimes();
 			display.updatePinkShops();
 		}
@@ -147,7 +147,7 @@ var blueupgrades = {
 		if (game.blue_slimes >= this.cost[index]) {
 			game.blue_slimes -= this.cost[index];
 			this.count[index]++;
-			this.cost[index] = Math.ceil(this.cost[index] * 1.23);
+			this.cost[index] = Math.ceil(this.cost[index] * 1.03);
 			game.blueClickValue += blueupgrades.efficiency[index];
 			display.updateBlueSlimes();
 			display.updateBlueUpgrades();
@@ -171,7 +171,7 @@ var pinkupgrades = {
 		if (game.pink_slimes >= this.cost[index]) {
 			game.pink_slimes -= this.cost[index];
 			this.count[index]++;
-			this.cost[index] = Math.ceil(this.cost[index] * 1.24);
+			this.cost[index] = Math.ceil(this.cost[index] * 1.04);
 			game.pinkClickValue += pinkupgrades.efficiency[index];
 			display.updatePinkSlimes();
 			display.updatePinkUpgrades();
@@ -189,15 +189,15 @@ var display = {
 
 	updateBlueShops: function() {
 		document.getElementById("blueSlimeAutomation").textContent = "";
-		for (i = 0; i < blueautomation.name.length; i++) {
-			document.getElementById("blueSlimeAutomation").innerHTML += '<table style="background-color: #0000ff;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueautomation.tooltip[i]+'" class="img" onClick="blueautomation.buying('+i+')" src="images/'+blueautomation.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.name[i]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">x'+blueautomation.income[i]+' multiplier</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.cost[i]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.count[i]+' owned</td></tr></table>';
+		for (i = 0; i < blueautomation.name.length; i = i+4) {
+			document.getElementById("blueSlimeAutomation").innerHTML += '<table style="background-color: #0000ff;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueautomation.tooltip[i]+'" class="img" onClick="blueautomation.buying('+i+')" src="images/'+blueautomation.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.name[i]+'</td><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueautomation.tooltip[i+1]+'" class="img" onClick="blueautomation.buying('+[i+1]+')" src="images/'+blueautomation.name[i+1]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.name[i+1]+'</td><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueautomation.tooltip[i+2]+'" class="img" onClick="blueautomation.buying('+[i+2]+')" src="images/'+blueautomation.name[i+2]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.name[i+2]+'</td><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueautomation.tooltip[i+3]+'" class="img" onClick="blueautomation.buying('+[i+3]+')" src="images/'+blueautomation.name[i+3]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.name[i+3]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">x'+blueautomation.income[i]+' multiplier</td><td style="border:1px solid #cfcfcf; padding:3px;">x'+blueautomation.income[i+1]+' multiplier</td><td style="border:1px solid #cfcfcf; padding:3px;">x'+blueautomation.income[i+2]+' multiplier</td><td style="border:1px solid #cfcfcf; padding:3px;">x'+blueautomation.income[i+3]+' multiplier</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.cost[i]+' blue slimes</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.cost[i+1]+' blue slimes</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.cost[i+2]+' blue slimes</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.cost[i+3]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.count[i]+' owned</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.count[i+1]+' owned</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.count[i+2]+' owned</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueautomation.count[i+3]+' owned</td></tr></table>';
 		}
 	},
 
 	updateBlueUpgrades: function() {
 		document.getElementById("blueSlimeUpgrades").textContent = "";
-		for (i = 0; i < blueupgrades.name.length; i++) {
-			document.getElementById("blueSlimeUpgrades").innerHTML += '<table style="background-color: #0000ff;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueupgrades.tooltip[i]+'" class="img" onClick="blueupgrades.buying('+i+')" src="images/'+blueupgrades.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.name[i]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">adds '+blueupgrades.efficiency[i]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">costs '+blueupgrades.cost[i]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.count[i]+' owned</td></tr></table>';
+		for (i = 0; i < blueupgrades.name.length; i = i+4) {
+			document.getElementById("blueSlimeUpgrades").innerHTML += '<table style="background-color: #0000ff;"><tr><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueupgrades.tooltip[i]+'" class="img" onClick="blueupgrades.buying('+i+')" src="images/'+blueupgrades.name[i]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.name[i]+'</td><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueupgrades.tooltip[i+1]+'" class="img" onClick="blueupgrades.buying('+[i+1]+')" src="images/'+blueupgrades.name[i+1]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.name[i+1]+'</td><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueupgrades.tooltip[i+2]+'" class="img" onClick="blueupgrades.buying('+[i+2]+')" src="images/'+blueupgrades.name[i+2]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.name[i+2]+'</td><td rowspan="4" style="border:1px solid #cfcfcf"><img title="'+blueupgrades.tooltip[i+3]+'" class="img" onClick="blueupgrades.buying('+[i+3]+')" src="images/'+blueupgrades.name[i+3]+'.gif"></td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.name[i+3]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">adds '+blueupgrades.efficiency[i]+'</td><td style="border:1px solid #cfcfcf; padding:3px;">adds '+blueupgrades.efficiency[i+1]+'</td><td style="border:1px solid #cfcfcf; padding:3px;">adds '+blueupgrades.efficiency[i+2]+'</td><td style="border:1px solid #cfcfcf; padding:3px;">adds '+blueupgrades.efficiency[i+3]+'</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">costs '+blueupgrades.cost[i]+' blue slimes</td><td style="border:1px solid #cfcfcf; padding:3px;">costs '+blueupgrades.cost[i+1]+' blue slimes</td><td style="border:1px solid #cfcfcf; padding:3px;">costs '+blueupgrades.cost[i+2]+' blue slimes</td><td style="border:1px solid #cfcfcf; padding:3px;">costs '+blueupgrades.cost[i+3]+' blue slimes</td></tr><tr><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.count[i]+' owned</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.count[i+1]+' owned</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.count[i+2]+' owned</td><td style="border:1px solid #cfcfcf; padding:3px;">'+blueupgrades.count[i+3]+' owned</td></tr></table>';
 		}
 	},
 	
@@ -209,15 +209,15 @@ var display = {
 
 	updatePinkShops: function() {
 		document.getElementById("pinkSlimeAutomation").textContent = "";
-		for (i = 0; i < pinkautomation.name.length; i++) {
-			document.getElementById("pinkSlimeAutomation").innerHTML += '<table style="background-color: #ffc0cb; color: #000000;"><tr><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkautomation.tooltip[i]+'" class="img" onClick="pinkautomation.buying('+i+')" src="images/'+pinkautomation.name[i]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.name[i]+'</td></tr><tr><td style="border:1px solid #000000; padding:3px;">x'+pinkautomation.income[i]+' multiplier</td></tr><tr><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.cost[i]+' pink slimes</td></tr><tr><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.count[i]+' owned</td></tr></table>';
+		for (i = 0; i < pinkautomation.name.length; i = i+4) {
+			document.getElementById("pinkSlimeAutomation").innerHTML += '<table style="background-color: #ffc0cb; color: #000000;"><tr><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkautomation.tooltip[i]+'" class="img" onClick="pinkautomation.buying('+i+')" src="images/'+pinkautomation.name[i]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.name[i]+'</td><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkautomation.tooltip[i+1]+'" class="img" onClick="pinkautomation.buying('+[i+1]+')" src="images/'+pinkautomation.name[i+1]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.name[i+1]+'</td><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkautomation.tooltip[i+2]+'" class="img" onClick="pinkautomation.buying('+[i+2]+')" src="images/'+pinkautomation.name[i+2]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.name[i+2]+'</td><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkautomation.tooltip[i+3]+'" class="img" onClick="pinkautomation.buying('+[i+3]+')" src="images/'+pinkautomation.name[i+3]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.name[i+3]+'</td></tr><tr><td style="border:1px solid #000000; padding:3px;">x'+pinkautomation.income[i]+' multiplier</td><td style="border:1px solid #000000; padding:3px;">x'+pinkautomation.income[i+1]+' multiplier</td><td style="border:1px solid #000000; padding:3px;">x'+pinkautomation.income[i+2]+' multiplier</td><td style="border:1px solid #000000; padding:3px;">x'+pinkautomation.income[i+3]+' multiplier</td></tr><tr><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.cost[i]+' pink slimes</td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.cost[i+1]+' pink slimes</td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.cost[i+2]+' pink slimes</td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.cost[i+3]+' pink slimes</td></tr><tr><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.count[i]+' owned</td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.count[i+1]+' owned</td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.count[i+2]+' owned</td><td style="border:1px solid #000000; padding:3px;">'+pinkautomation.count[i+3]+' owned</td></tr></table>';
 		}
 	},
 	
 	updatePinkUpgrades: function() {
 		document.getElementById("pinkSlimeUpgrades").textContent = "";
-		for (i = 0; i < pinkupgrades.name.length; i++) {
-			document.getElementById("pinkSlimeUpgrades").innerHTML += '<table style="background-color: #ffc0cb; color: #000000;"><tr><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkupgrades.tooltip[i]+'" class="img" onClick="pinkupgrades.buying('+i+')" src="images/'+pinkupgrades.name[i]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.name[i]+'</td></tr><tr><td style="border:1px solid #000000; padding:3px;">adds '+pinkupgrades.efficiency[i]+'</td></tr><tr><td style="border:1px solid #000000; padding:3px;">costs '+pinkupgrades.cost[i]+' pink slimes</td></tr><tr><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.count[i]+' owned</td></tr></table>';
+		for (i = 0; i < pinkupgrades.name.length; i = i+4) {
+			document.getElementById("pinkSlimeUpgrades").innerHTML += '<table style="background-color: #ffc0cb; color: #000000;"><tr><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkupgrades.tooltip[i]+'" class="img" onClick="pinkupgrades.buying('+i+')" src="images/'+pinkupgrades.name[i]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.name[i]+'</td><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkupgrades.tooltip[i+1]+'" class="img" onClick="pinkupgrades.buying('+[i+1]+')" src="images/'+pinkupgrades.name[i+1]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.name[i+1]+'</td><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkupgrades.tooltip[i+2]+'" class="img" onClick="pinkupgrades.buying('+[i+2]+')" src="images/'+pinkupgrades.name[i+2]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.name[i+2]+'</td><td rowspan="4" style="border:1px solid #000000"><img title="'+pinkupgrades.tooltip[i+3]+'" class="img" onClick="pinkupgrades.buying('+[i+3]+')" src="images/'+pinkupgrades.name[i+3]+'.gif"></td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.name[i+3]+'</td></tr><tr><td style="border:1px solid #000000; padding:3px;">adds '+pinkupgrades.efficiency[i]+'</td><td style="border:1px solid #000000; padding:3px;">adds '+pinkupgrades.efficiency[i+1]+'</td><td style="border:1px solid #000000; padding:3px;">adds '+pinkupgrades.efficiency[i+2]+'</td><td style="border:1px solid #000000; padding:3px;">adds '+pinkupgrades.efficiency[i+3]+'</td></tr><tr><td style="border:1px solid #000000; padding:3px;">costs '+pinkupgrades.cost[i]+' pink slimes</td><td style="border:1px solid #000000; padding:3px;">costs '+pinkupgrades.cost[i+1]+' pink slimes</td><td style="border:1px solid #000000; padding:3px;">costs '+pinkupgrades.cost[i+2]+' pink slimes</td><td style="border:1px solid #000000; padding:3px;">costs '+pinkupgrades.cost[i+3]+' pink slimes</td></tr><tr><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.count[i]+' owned</td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.count[i+1]+' owned</td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.count[i+2]+' owned</td><td style="border:1px solid #000000; padding:3px;">'+pinkupgrades.count[i+3]+' owned</td></tr></table>';
 		}
 	},
 }
@@ -240,7 +240,6 @@ function saveGame() {
 		pinkautomationIncome: pinkautomation.income,
 		pinkupgradesCount: pinkupgrades.count,
 		pinkupgradesCost: pinkupgrades.cost,
-
 	}
 	localStorage.setItem("gameSave", JSON.stringify(gameSave));
 }
@@ -350,6 +349,8 @@ window.onload = function() {
 setInterval(function() {
 	game.blue_slimes += game.getBlueSlimesPerSecond();
 	display.updateBlueSlimes();
+	game.pink_slimes += game.getPinkSlimesPerSecond();
+	display.updatePinkSlimes();
 	if (game.blue_slimes >= 5) {
 		document.getElementById("b3").disabled = "";
 	};
@@ -365,13 +366,18 @@ setInterval(function() {
 		document.getElementById("pink_slimes_table_01").style.display = "";
 		document.getElementById("pink_slimes_table_02").style.display = "";
 		document.getElementById("pink_slimes_table_03").style.display = "";
+		document.getElementById("pink_slimes_table_04").style.display = "";
 		document.getElementById("ul_pink_slimes").style.display = "";
 	};
 	if (game.blue_slimes >= 100000) {
 		document.getElementById("b97").disabled = false;
 	};
-	game.pink_slimes += game.getPinkSlimesPerSecond();
-	display.updatePinkSlimes();
+	if (game.blue_slimes >= 1000000000) {
+		document.getElementById("1B_blue_slimes").style.display = "";
+	};
+	if (game.pink_slimes >= 1000000000) {
+		document.getElementById("1B_pink_slimes").style.display = "";
+	};
 }, 1000); // Updates currencies every second.
 
 setInterval (function() {

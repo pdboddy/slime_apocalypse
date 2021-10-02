@@ -31,26 +31,20 @@
 			</div>
 			<div class="third" id="slimes">
 				<table style="border:1px solid #000000;">
-					<caption>Your&#160;Slime&#160;Reserves</caption>
+					<th colspan="4">Your Slime Reserves</th>
 					<tr>
 						<td title="Adorable, ain't he?" rowspan="3" style="border:1px solid #000000"><img class="img noselect" id="p1" src="images/Blue_Slime.gif"/></td>
 						<td title="Total blue slimes." style="border:1px solid #000000; padding:3px;">Blue Slimes: <span id="blue_slimes">0</span></td>
+						<td title="Adorable, ain't she?" rowspan="3" style="border:1px solid #000000; display:none" id="pink_slimes_table_01"><img class="img noselect" id="p2" src="images/Pink_Slime.gif"/></td>
+						<td title="Total pink slimes." style="border:1px solid #000000; padding:3px; display:none" id="pink_slimes_table_02">Pink Slimes: <span id="pink_slimes">0</span></td>
 					</tr>
 					<tr>
 						<td title="Total slimes per click." style="border:1px solid #000000; padding:3px;">Blue Slimes/c: <span id="blue_slimes_per_click">0</span></td>
+						<td title="Total slimes per click." style="border:1px solid #000000; padding:3px; display:none" id="pink_slimes_table_03">Pink Slimes/c: <span id="pink_slimes_per_click">0</span></td>
 					</tr>
 					<tr>
 						<td title="Total slimes per second." style="border:1px solid #000000; padding:3px;">Blue Slimes/s: <span id="blue_slimes_per_second">0</span></td>
-					</tr>
-					<tr style="display:none" id="pink_slimes_table_01">
-						<td title="Adorable, ain't she?" rowspan="3" style="border:1px solid #000000"><img class="img noselect" id="p2" src="images/Pink_Slime.gif"/></td>
-						<td title="Total pink slimes." style="border:1px solid #000000; padding:3px;">Pink Slimes: <span id="pink_slimes">0</span></td>
-					</tr>
-					<tr style="display:none" id="pink_slimes_table_02">
-						<td title="Total slimes per click." style="border:1px solid #000000; padding:3px;">Pink Slimes/c: <span id="pink_slimes_per_click">0</span></td>
-					</tr>
-					<tr style="display:none" id="pink_slimes_table_03">
-						<td title="Total slimes per second." style="border:1px solid #000000; padding:3px;">Pink Slimes/s: <span id="pink_slimes_per_second">0</span></td>
+						<td title="Total slimes per second." style="border:1px solid #000000; padding:3px; display:none" id="pink_slimes_table_04">Pink Slimes/s: <span id="pink_slimes_per_second">0</span></td>
 					</tr>
 				</table>
 			</div>
@@ -71,11 +65,19 @@
 			</div>
 			<div class="third" id="achievements" style="display:none">
 				<table style="border:1px solid #000000;">
-				<th colspan="2">List of unlocked Achievements</th>
-				<tr style="display:none" id="ul_pink_slimes">
-					<td><img class="img noselect" id="p2" src="images/Pink_Slime.gif"/></td>
-					<td>Unlocked Pink Slimes!</td>
-				</tr>
+					<th colspan="2">List of unlocked Achievements</th>
+					<tr style="display:none" id="1B_blue_slimes">
+						<td style="border:1px solid #000000; padding:3px;"><img class="img noselect" src="images/Blue_Slime.gif"/></td>
+						<td style="border:1px solid #000000; padding:3px;">1 BILLION Blue Slimes!</td>
+					</tr>
+					<tr style="display:none" id="ul_pink_slimes">
+						<td style="border:1px solid #000000; padding:3px;"><img class="img noselect" src="images/Pink_Slime.gif"/></td>
+						<td style="border:1px solid #000000; padding:3px;">Unlocked Pink Slimes!</td>
+					</tr>
+					<tr style="display:none" id="1B_pink_slimes">
+						<td style="border:1px solid #000000; padding:3px;"><img class="img noselect" src="images/Pink_Slime.gif"/></td>
+						<td style="border:1px solid #000000; padding:3px;">1 BILLION Pink Slimes!</td>
+					</tr>
 				</table>
 			</div>
 			<div class="third" id="screen_6" style="display:none">Screen 6
@@ -84,7 +86,7 @@
 		<script type="text/javascript" src="index.js"></script>
 	</body>
 	<footer>
-		<p>Slime Apocalypse v0.5</p>
+		<p>Slime Apocalypse v0.6</p>
 		Copyright &#169 2021 Peter David Boddy
 	</footer>
 </html>
