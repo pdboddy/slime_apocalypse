@@ -185,6 +185,14 @@ var display = {
 		document.getElementById("blue_slimes_per_second").textContent = game.getBlueSlimesPerSecond();
 		document.getElementById("blue_slimes_per_click").textContent = game.blueClickValue;
 		document.title = game.blue_slimes + " - Averting the Slime Apocalypse!";
+		document.getElementById("bs1_1_name").innerHTML = blueupgrades.name[0];
+		document.getElementById("bs1_1_efficiency").innerHTML = blueupgrades.efficiency[0];
+		document.getElementById("bs1_1_cost").innerHTML = blueupgrades.cost[0];
+		document.getElementById("bs1_1_count").innerHTML = blueupgrades.count[0];
+		document.getElementById("bs2_1_name").innerHTML = blueautomation.name[0];
+		document.getElementById("bs2_1_income").innerHTML = blueautomation.income[0];
+		document.getElementById("bs2_1_cost").innerHTML = blueautomation.cost[0];
+		document.getElementById("bs2_1_count").innerHTML = blueautomation.count[0];
 	},
 
 	updateBlueShops: function() {
@@ -323,7 +331,23 @@ var bttn97 = document.getElementById("b97");
 var bttn98 = document.getElementById("b98");
 var bttn99 = document.getElementById("b99");
 var pic1 = document.getElementById("p1");
+var pic1_1_1_1 = document.getElementById("p1_1_1_1");
+var pic1_1_1_2 = document.getElementById("p1_1_1_2");
+var pic1_1_1_3 = document.getElementById("p1_1_1_3");
+var pic1_1_1_4 = document.getElementById("p1_1_1_4");
+var pic1_1_2_1 = document.getElementById("p1_1_2_1");
+var pic1_1_2_2 = document.getElementById("p1_1_2_2");
+var pic1_1_2_3 = document.getElementById("p1_1_2_3");
+var pic1_1_2_4 = document.getElementById("p1_1_2_4");
 var pic2 = document.getElementById("p2");
+var pic2_1_1_1 = document.getElementById("p2_1_1_1");
+var pic2_1_1_2 = document.getElementById("p2_1_1_2");
+var pic2_1_1_3 = document.getElementById("p2_1_1_3");
+var pic2_1_1_4 = document.getElementById("p2_1_1_4");
+var pic2_1_2_1 = document.getElementById("p2_1_2_1");
+var pic2_1_2_2 = document.getElementById("p2_1_2_2");
+var pic2_1_2_3 = document.getElementById("p2_1_2_3");
+var pic2_1_2_4 = document.getElementById("p2_1_2_4");
 bttn1.addEventListener("click", function(){navigate('slimes');});
 bttn2.addEventListener("click", function(){navigate('automation');});
 bttn3.addEventListener("click", function(){navigate('upgrades');});
@@ -335,6 +359,22 @@ pic1.addEventListener("click", function(){game.addToBlueSlimes(game.blueClickVal
 pic1.addEventListener("mousemove", function(){game.addToBlueSlimes(game.blueClickValue);});
 pic2.addEventListener("click", function(){game.addToPinkSlimes(game.pinkClickValue);});
 pic2.addEventListener("mousemove", function(){game.addToPinkSlimes(game.pinkClickValue);});
+pic1_1_1_1.addEventListener("click", function(){blueupgrades.buying(1);});
+pic1_1_1_2.addEventListener("click", function(){blueupgrades.buying(2);});
+pic1_1_1_3.addEventListener("click", function(){blueupgrades.buying(3);});
+pic1_1_1_4.addEventListener("click", function(){blueupgrades.buying(4);});
+pic1_1_2_1.addEventListener("click", function(){blueautomation.buying(1);});
+pic1_1_2_2.addEventListener("click", function(){blueautomation.buying(2);});
+pic1_1_2_3.addEventListener("click", function(){blueautomation.buying(3);});
+pic1_1_2_4.addEventListener("click", function(){blueautomation.buying(4);});
+pic2_1_1_1.addEventListener("click", function(){pinkupgrades.buying(1);});
+pic2_1_1_2.addEventListener("click", function(){pinkupgrades.buying(2);});
+pic2_1_1_3.addEventListener("click", function(){pinkupgrades.buying(3);});
+pic2_1_1_4.addEventListener("click", function(){pinkupgrades.buying(4);});
+pic2_1_2_1.addEventListener("click", function(){pinkautomation.buying(1);});
+pic2_1_2_2.addEventListener("click", function(){pinkautomation.buying(2);});
+pic2_1_2_3.addEventListener("click", function(){pinkautomation.buying(3);});
+pic2_1_2_4.addEventListener("click", function(){pinkautomation.buying(4);});
 
 window.onload = function() {
 	loadGame();
@@ -367,6 +407,14 @@ setInterval(function() {
 		document.getElementById("pink_slimes_table_02").style.display = "";
 		document.getElementById("pink_slimes_table_03").style.display = "";
 		document.getElementById("pink_slimes_table_04").style.display = "";
+		document.getElementById("pink_slimes_table_05").style.display = "";
+		document.getElementById("pink_slimes_table_06").style.display = "";
+		document.getElementById("pink_slimes_table_07").style.display = "";
+		document.getElementById("pink_slimes_table_08").style.display = "";
+		document.getElementById("pink_slimes_table_09").style.display = "";
+		document.getElementById("pink_slimes_table_10").style.display = "";
+		document.getElementById("pink_slimes_table_11").style.display = "";
+		document.getElementById("pink_slimes_table_12").style.display = "";
 		document.getElementById("ul_pink_slimes").style.display = "";
 	};
 	if (game.blue_slimes >= 100000) {

@@ -31,20 +31,80 @@
 			</div>
 			<div class="third" id="slimes">
 				<table style="border:1px solid #000000;">
-					<th colspan="4">Your Slime Reserves</th>
 					<tr>
-						<td title="Adorable, ain't he?" rowspan="3" style="border:1px solid #000000"><img class="img noselect" id="p1" src="images/Blue_Slime.gif"/></td>
-						<td title="Total blue slimes." style="border:1px solid #000000; padding:3px;">Blue Slimes: <span id="blue_slimes">0</span></td>
-						<td title="Adorable, ain't she?" rowspan="3" style="border:1px solid #000000; display:none" id="pink_slimes_table_01"><img class="img noselect" id="p2" src="images/Pink_Slime.gif"/></td>
-						<td title="Total pink slimes." style="border:1px solid #000000; padding:3px; display:none" id="pink_slimes_table_02">Pink Slimes: <span id="pink_slimes">0</span></td>
+						<th colspan="6">Your Slime Reserves</th>
 					</tr>
 					<tr>
-						<td title="Total slimes per click." style="border:1px solid #000000; padding:3px;">Blue Slimes/c: <span id="blue_slimes_per_click">0</span></td>
-						<td title="Total slimes per click." style="border:1px solid #000000; padding:3px; display:none" id="pink_slimes_table_03">Pink Slimes/c: <span id="pink_slimes_per_click">0</span></td>
+						<td rowspan="4" title="Adorable, ain't he?" style="border:1px solid #000000; padding:3px;"><img class="img noselect" src="images/Blue_Slime.gif" id="p1"></td>
+						<td class="tooltip" style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Arrow_Upgrade_I_Sw.gif" id="p1_1_1_1">
+							<span class="tooltiptext">
+								<table style="background-color: #0000ff;">
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;"><span id="bs1_1_name"></span></td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;">x <span id="bs1_1_efficiency"></span> multiplier</td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;">next cost <span id="bs1_1_cost"></span> blue slimes</td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;"><span id="bs1_1_count"></span> owned</td>
+									</tr>
+								</table>
+							</span>
+						</td>
+						<td class="tooltip" style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Automation_I_Sw.gif" id="p1_1_2_1">
+							<span class="tooltiptext">
+								<table style="background-color: #0000ff;">
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;"><span id="bs2_1_name"></span></td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;">x <span id="bs2_1_income"></span> multiplier</td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;">next cost <span id="bs2_1_cost"></span> blue slimes</td>
+									</tr>
+									<tr>
+										<td style="border:1px solid #cfcfcf; padding:3px;"><span id="bs2_1_count"></span> owned</td>
+									</tr>
+								</table>
+							</span>
+						</td>
+						<td rowspan="4" title="Adorable, ain't she?" style="border:1px solid #000000; padding:3px; display:none" id="pink_slimes_table_01"><img class="img noselect" src="images/Pink_Slime.gif" id="p2"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_02"><img class="img noselect" src="images/Arrow_Upgrade_I_S.gif" id="p2_1_1_1"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_03"><img class="img noselect" src="images/Automation_I_S.gif" id="p2_1_2_1"></td>
 					</tr>
 					<tr>
-						<td title="Total slimes per second." style="border:1px solid #000000; padding:3px;">Blue Slimes/s: <span id="blue_slimes_per_second">0</span></td>
-						<td title="Total slimes per second." style="border:1px solid #000000; padding:3px; display:none" id="pink_slimes_table_04">Pink Slimes/s: <span id="pink_slimes_per_second">0</span></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Arrow_Upgrade_II_Sw.gif" id="p1_1_1_2"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Automation_II_Sw.gif" id="p1_1_2_2"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_04"><img class="img noselect" src="images/Arrow_Upgrade_II_S.gif" id="p2_1_1_2"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_05"><img class="img noselect" src="images/Automation_II_S.gif" id="p2_1_2_2"></td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Arrow_Upgrade_III_Sw.gif" id="p1_1_1_3"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Automation_III_Sw.gif" id="p1_1_2_3"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_06"><img class="img noselect" src="images/Arrow_Upgrade_III_S.gif" id="p2_1_1_3"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_07"><img class="img noselect" src="images/Automation_III_S.gif" id="p2_1_2_3"></td>
+					</tr>
+					<tr>
+						<td style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Arrow_Upgrade_IV_Sw.gif" id="p1_1_1_4"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #0000ff;"><img class="img noselect" src="images/Automation_IV_Sw.gif" id="p1_1_2_4"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_08"><img class="img noselect" src="images/Arrow_Upgrade_IV_S.gif" id="p2_1_1_4"></td>
+						<td style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; display:none" id="pink_slimes_table_09"><img class="img noselect" src="images/Automation_IV_S.gif" id="p2_1_2_4"></td>
+					</tr>
+					<tr>
+						<td colspan="3" title="Total blue slimes." style="border:1px solid #000000; padding:3px; background-color: #0000ff;">Blue Slimes: <span id="blue_slimes">0</span></td>
+						<td colspan="3" title="Total pink slimes." style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; color: #000000; display:none" id="pink_slimes_table_10">Pink Slimes: <span id="pink_slimes">0</span></td>
+					</tr>
+					<tr>
+						<td colspan="3" title="Total slimes per click." style="border:1px solid #000000; padding:3px; background-color: #0000ff;">Blue Slimes/c: <span id="blue_slimes_per_click">0</span></td>
+						<td colspan="3" title="Total pink slimes." style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; color: #000000; display:none" id="pink_slimes_table_11">Pink Slimes/c: <span id="pink_slimes_per_click">0</span></td>
+					</tr>
+					<tr>
+						<td colspan="3" title="Total slimes per second." style="border:1px solid #000000; padding:3px; background-color: #0000ff;">Blue Slimes/s: <span id="blue_slimes_per_second">0</span></td>
+						<td colspan="3" title="Total slimes per second." style="border:1px solid #000000; padding:3px; background-color: #ffc0cb; color: #000000; display:none" id="pink_slimes_table_12">Pink Slimes/s: <span id="pink_slimes_per_second">0</span></td>
 					</tr>
 				</table>
 			</div>
@@ -86,7 +146,8 @@
 		<script type="text/javascript" src="index.js"></script>
 	</body>
 	<footer>
-		<p>Slime Apocalypse v0.6</p>
+		<span style="background-color:#ffffff; border:1px solid #000000; margin:1px; padding-top:5px; padding-left:5px; padding-right:5px;"><img class="img noselect" src="images/Logo.gif" style="padding-top:5px;"/></span>
+		<p>Slime Apocalypse v0.7</p>
 		Copyright &#169 2021 Peter David Boddy
 	</footer>
 </html>

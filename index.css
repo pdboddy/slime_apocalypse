@@ -94,3 +94,19 @@ body {
 	-ms-user-select: none; /* Internment Exploder */
 	user-select: none;
 } // Makes it so that text is not selectable.
+
+.tooltip {
+	position:relative;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	border-radius: 3px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
