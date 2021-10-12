@@ -87,10 +87,10 @@ var game = {
 
 var blueautomation = {
 	tooltip: [
-		"Agitators are the base form of slime multiplication.",
-		"Pesterizers are more efficient than the agitators, but come at a higher cost.",
-		"Threefers are more expensive still, but offer one of the best automation multipliers.",
-		"The penultimate in slime multiplication, slappers also come with a delightful sound."
+		"Automation Upgrade Mk I for blue slimes.",
+		"Automation Upgrade Mk II for blue slimes.",
+		"Automation Upgrade Mk III for blue slimes.",
+		"Automation Upgrade Mk IV for blue slimes."
 	],
 	name: ["Agitators", "Pesterizers", "Threefers", "Slappers"],
 	count: [0, 0, 0, 0],
@@ -110,10 +110,10 @@ var blueautomation = {
 
 var pinkautomation = {
 	tooltip: [
-		"Agitators are the base form of slime multiplication.",
-		"Pesterizers are more efficient than the agitators, but come at a higher cost.",
-		"Threefers are more expensive still, but offer one of the best automation multipliers.",
-		"The penultimate in slime multiplication, slappers also come with a delightful sound."
+		"Automation Upgrade Mk I for pink slimes.",
+		"Automation Upgrade Mk II for pink slimes.",
+		"Automation Upgrade Mk III for pink slimes.",
+		"Automation Upgrade Mk IV for pink slimes."
 	],
 	name: ["Agitators", "Pesterizers", "Threefers", "Slappers"],
 	count: [0, 0, 0, 0],
@@ -133,10 +133,10 @@ var pinkautomation = {
 
 var blueupgrades = {
 	tooltip: [
-		"Arrow Upgrade Mk I offers small incrememntal upgrades to clicking efficiency.",
-		"Arrow Upgrade Mk II offers a slightly better return per click.",
-		"A tenfold increase over the Mk I.",
-		"A tenfold increase over the Mk II."
+		"Clicking Upgrade Mk I for blue slimes.",
+		"Clicking Upgrade Mk II for blue slimes.",
+		"Clicking Upgrade Mk III for blue slimes.",
+		"Clicking Upgrade Mk IV for blue slimes."
 	],
 	name: ["Arrow_Upgrade_I", "Arrow_Upgrade_II", "Arrow_Upgrade_III", "Arrow_Upgrade_IV"],
 	count: [0, 0, 0, 0],
@@ -157,10 +157,10 @@ var blueupgrades = {
 
 var pinkupgrades = {
 	tooltip: [
-		"Arrow Upgrade Mk I offers small incrememntal upgrades to clicking efficiency.",
-		"Arrow Upgrade Mk II offers a slightly better return per click.",
-		"A tenfold increase over the Mk I.",
-		"A tenfold increase over the Mk II."
+		"Clicking Upgrade Mk I for pink slimes.",
+		"Clicking Upgrade Mk II for pink slimes.",
+		"Clicking Upgrade Mk III for pink slimes.",
+		"Clicking Upgrade Mk IV for pink slimes."
 	],
 	name: ["Arrow_Upgrade_I", "Arrow_Upgrade_II", "Arrow_Upgrade_III", "Arrow_Upgrade_IV"],
 	count: [0, 0, 0, 0],
@@ -189,10 +189,12 @@ var display = {
 		document.getElementById("bs1_1_efficiency").innerHTML = blueupgrades.efficiency[0];
 		document.getElementById("bs1_1_cost").innerHTML = blueupgrades.cost[0];
 		document.getElementById("bs1_1_count").innerHTML = blueupgrades.count[0];
+		document.getElementById("bs1_1_tooltip").innerHTML = blueupgrades.tooltip[0];
 		document.getElementById("bs2_1_name").innerHTML = blueautomation.name[0];
 		document.getElementById("bs2_1_income").innerHTML = blueautomation.income[0];
 		document.getElementById("bs2_1_cost").innerHTML = blueautomation.cost[0];
 		document.getElementById("bs2_1_count").innerHTML = blueautomation.count[0];
+		document.getElementById("bs2_1_tooltip").innerHTML = blueautomation.tooltip[0];
 	},
 
 	updateBlueShops: function() {
@@ -359,22 +361,22 @@ pic1.addEventListener("click", function(){game.addToBlueSlimes(game.blueClickVal
 pic1.addEventListener("mousemove", function(){game.addToBlueSlimes(game.blueClickValue);});
 pic2.addEventListener("click", function(){game.addToPinkSlimes(game.pinkClickValue);});
 pic2.addEventListener("mousemove", function(){game.addToPinkSlimes(game.pinkClickValue);});
-pic1_1_1_1.addEventListener("click", function(){blueupgrades.buying(1);});
-pic1_1_1_2.addEventListener("click", function(){blueupgrades.buying(2);});
-pic1_1_1_3.addEventListener("click", function(){blueupgrades.buying(3);});
-pic1_1_1_4.addEventListener("click", function(){blueupgrades.buying(4);});
-pic1_1_2_1.addEventListener("click", function(){blueautomation.buying(1);});
-pic1_1_2_2.addEventListener("click", function(){blueautomation.buying(2);});
-pic1_1_2_3.addEventListener("click", function(){blueautomation.buying(3);});
-pic1_1_2_4.addEventListener("click", function(){blueautomation.buying(4);});
-pic2_1_1_1.addEventListener("click", function(){pinkupgrades.buying(1);});
-pic2_1_1_2.addEventListener("click", function(){pinkupgrades.buying(2);});
-pic2_1_1_3.addEventListener("click", function(){pinkupgrades.buying(3);});
-pic2_1_1_4.addEventListener("click", function(){pinkupgrades.buying(4);});
-pic2_1_2_1.addEventListener("click", function(){pinkautomation.buying(1);});
-pic2_1_2_2.addEventListener("click", function(){pinkautomation.buying(2);});
-pic2_1_2_3.addEventListener("click", function(){pinkautomation.buying(3);});
-pic2_1_2_4.addEventListener("click", function(){pinkautomation.buying(4);});
+pic1_1_1_1.addEventListener("click", function(){blueupgrades.buying(0);});
+pic1_1_1_2.addEventListener("click", function(){blueupgrades.buying(1);});
+pic1_1_1_3.addEventListener("click", function(){blueupgrades.buying(2);});
+pic1_1_1_4.addEventListener("click", function(){blueupgrades.buying(3);});
+pic1_1_2_1.addEventListener("click", function(){blueautomation.buying(0);});
+pic1_1_2_2.addEventListener("click", function(){blueautomation.buying(1);});
+pic1_1_2_3.addEventListener("click", function(){blueautomation.buying(2);});
+pic1_1_2_4.addEventListener("click", function(){blueautomation.buying(3);});
+pic2_1_1_1.addEventListener("click", function(){pinkupgrades.buying(0);});
+pic2_1_1_2.addEventListener("click", function(){pinkupgrades.buying(1);});
+pic2_1_1_3.addEventListener("click", function(){pinkupgrades.buying(2);});
+pic2_1_1_4.addEventListener("click", function(){pinkupgrades.buying(3);});
+pic2_1_2_1.addEventListener("click", function(){pinkautomation.buying(0);});
+pic2_1_2_2.addEventListener("click", function(){pinkautomation.buying(1);});
+pic2_1_2_3.addEventListener("click", function(){pinkautomation.buying(2);});
+pic2_1_2_4.addEventListener("click", function(){pinkautomation.buying(3);});
 
 window.onload = function() {
 	loadGame();
