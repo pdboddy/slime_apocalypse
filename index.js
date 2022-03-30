@@ -195,6 +195,16 @@ var display = {
 		document.getElementById("bs2_1_cost").innerHTML = blueautomation.cost[0];
 		document.getElementById("bs2_1_count").innerHTML = blueautomation.count[0];
 		document.getElementById("bs2_1_tooltip").innerHTML = blueautomation.tooltip[0];
+		document.getElementById("bs1_2_name").innerHTML = blueupgrades.name[1];
+		document.getElementById("bs1_2_efficiency").innerHTML = blueupgrades.efficiency[1];
+		document.getElementById("bs1_2_cost").innerHTML = blueupgrades.cost[1];
+		document.getElementById("bs1_2_count").innerHTML = blueupgrades.count[1];
+		document.getElementById("bs1_2_tooltip").innerHTML = blueupgrades.tooltip[1];
+		document.getElementById("bs2_2_name").innerHTML = blueautomation.name[1];
+		document.getElementById("bs2_2_income").innerHTML = blueautomation.income[1];
+		document.getElementById("bs2_2_cost").innerHTML = blueautomation.cost[1];
+		document.getElementById("bs2_2_count").innerHTML = blueautomation.count[1];
+		document.getElementById("bs2_2_tooltip").innerHTML = blueautomation.tooltip[1];
 	},
 
 	updateBlueShops: function() {
@@ -424,9 +434,13 @@ setInterval(function() {
 	};
 	if (game.blue_slimes >= 1000000000) {
 		document.getElementById("1B_blue_slimes").style.display = "";
+		let blue_slimes_n = game.blue_slimes.toExponential(5);
+		document.getElementById("blue_slimes").innerHTML = blue_slimes_n;
 	};
 	if (game.pink_slimes >= 1000000000) {
 		document.getElementById("1B_pink_slimes").style.display = "";
+		let pink_slimes_n = game.pink_slimes.toExponential(5);
+		document.getElementById("pink_slimes").innerHTML = pink_slimes_n;
 	};
 }, 1000); // Updates currencies every second.
 
