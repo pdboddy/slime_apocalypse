@@ -205,6 +205,26 @@ var display = {
 		document.getElementById("bs2_2_cost").innerHTML = blueautomation.cost[1];
 		document.getElementById("bs2_2_count").innerHTML = blueautomation.count[1];
 		document.getElementById("bs2_2_tooltip").innerHTML = blueautomation.tooltip[1];
+		document.getElementById("bs1_3_name").innerHTML = blueupgrades.name[2];
+		document.getElementById("bs1_3_efficiency").innerHTML = blueupgrades.efficiency[2];
+		document.getElementById("bs1_3_cost").innerHTML = blueupgrades.cost[2];
+		document.getElementById("bs1_3_count").innerHTML = blueupgrades.count[2];
+		document.getElementById("bs1_3_tooltip").innerHTML = blueupgrades.tooltip[2];
+		document.getElementById("bs2_3_name").innerHTML = blueautomation.name[2];
+		document.getElementById("bs2_3_income").innerHTML = blueautomation.income[2];
+		document.getElementById("bs2_3_cost").innerHTML = blueautomation.cost[2];
+		document.getElementById("bs2_3_count").innerHTML = blueautomation.count[2];
+		document.getElementById("bs2_3_tooltip").innerHTML = blueautomation.tooltip[2];
+		document.getElementById("bs1_4_name").innerHTML = blueupgrades.name[3];
+		document.getElementById("bs1_4_efficiency").innerHTML = blueupgrades.efficiency[3];
+		document.getElementById("bs1_4_cost").innerHTML = blueupgrades.cost[3];
+		document.getElementById("bs1_4_count").innerHTML = blueupgrades.count[3];
+		document.getElementById("bs1_4_tooltip").innerHTML = blueupgrades.tooltip[3];
+		document.getElementById("bs2_4_name").innerHTML = blueautomation.name[3];
+		document.getElementById("bs2_4_income").innerHTML = blueautomation.income[3];
+		document.getElementById("bs2_4_cost").innerHTML = blueautomation.cost[3];
+		document.getElementById("bs2_4_count").innerHTML = blueautomation.count[3];
+		document.getElementById("bs2_4_tooltip").innerHTML = blueautomation.tooltip[3];
 	},
 
 	updateBlueShops: function() {
@@ -331,8 +351,9 @@ function resetSlimeProgress() {
 		var gameSave = {};
 		localStorage.setItem("gameSave", JSON.stringify(gameSave));
 		location.reload();
-	}
 	alert("Your progress has been reset!");
+	}
+	else {alert("Your progress has not been reset.");}
 }
 
 var bttn1 = document.getElementById("b1");
@@ -343,23 +364,23 @@ var bttn97 = document.getElementById("b97");
 var bttn98 = document.getElementById("b98");
 var bttn99 = document.getElementById("b99");
 var pic1 = document.getElementById("p1");
-var pic1_1_1_1 = document.getElementById("p1_1_1_1");
-var pic1_1_1_2 = document.getElementById("p1_1_1_2");
-var pic1_1_1_3 = document.getElementById("p1_1_1_3");
-var pic1_1_1_4 = document.getElementById("p1_1_1_4");
-var pic1_1_2_1 = document.getElementById("p1_1_2_1");
-var pic1_1_2_2 = document.getElementById("p1_1_2_2");
-var pic1_1_2_3 = document.getElementById("p1_1_2_3");
-var pic1_1_2_4 = document.getElementById("p1_1_2_4");
+var pic1_1_1 = document.getElementById("p1_1_1");
+var pic1_1_2 = document.getElementById("p1_1_2");
+var pic1_1_3 = document.getElementById("p1_1_3");
+var pic1_1_4 = document.getElementById("p1_1_4");
+var pic1_2_1 = document.getElementById("p1_2_1");
+var pic1_2_2 = document.getElementById("p1_2_2");
+var pic1_2_3 = document.getElementById("p1_2_3");
+var pic1_2_4 = document.getElementById("p1_2_4");
 var pic2 = document.getElementById("p2");
-var pic2_1_1_1 = document.getElementById("p2_1_1_1");
-var pic2_1_1_2 = document.getElementById("p2_1_1_2");
-var pic2_1_1_3 = document.getElementById("p2_1_1_3");
-var pic2_1_1_4 = document.getElementById("p2_1_1_4");
-var pic2_1_2_1 = document.getElementById("p2_1_2_1");
-var pic2_1_2_2 = document.getElementById("p2_1_2_2");
-var pic2_1_2_3 = document.getElementById("p2_1_2_3");
-var pic2_1_2_4 = document.getElementById("p2_1_2_4");
+var pic2_1_1 = document.getElementById("p2_1_1");
+var pic2_1_2 = document.getElementById("p2_1_2");
+var pic2_1_3 = document.getElementById("p2_1_3");
+var pic2_1_4 = document.getElementById("p2_1_4");
+var pic2_2_1 = document.getElementById("p2_2_1");
+var pic2_2_2 = document.getElementById("p2_2_2");
+var pic2_2_3 = document.getElementById("p2_2_3");
+var pic2_2_4 = document.getElementById("p2_2_4");
 bttn1.addEventListener("click", function(){navigate('slimes');});
 bttn2.addEventListener("click", function(){navigate('automation');});
 bttn3.addEventListener("click", function(){navigate('upgrades');});
@@ -371,22 +392,22 @@ pic1.addEventListener("click", function(){game.addToBlueSlimes(game.blueClickVal
 pic1.addEventListener("mousemove", function(){game.addToBlueSlimes(game.blueClickValue);});
 pic2.addEventListener("click", function(){game.addToPinkSlimes(game.pinkClickValue);});
 pic2.addEventListener("mousemove", function(){game.addToPinkSlimes(game.pinkClickValue);});
-pic1_1_1_1.addEventListener("click", function(){blueupgrades.buying(0);});
-pic1_1_1_2.addEventListener("click", function(){blueupgrades.buying(1);});
-pic1_1_1_3.addEventListener("click", function(){blueupgrades.buying(2);});
-pic1_1_1_4.addEventListener("click", function(){blueupgrades.buying(3);});
-pic1_1_2_1.addEventListener("click", function(){blueautomation.buying(0);});
-pic1_1_2_2.addEventListener("click", function(){blueautomation.buying(1);});
-pic1_1_2_3.addEventListener("click", function(){blueautomation.buying(2);});
-pic1_1_2_4.addEventListener("click", function(){blueautomation.buying(3);});
-pic2_1_1_1.addEventListener("click", function(){pinkupgrades.buying(0);});
-pic2_1_1_2.addEventListener("click", function(){pinkupgrades.buying(1);});
-pic2_1_1_3.addEventListener("click", function(){pinkupgrades.buying(2);});
-pic2_1_1_4.addEventListener("click", function(){pinkupgrades.buying(3);});
-pic2_1_2_1.addEventListener("click", function(){pinkautomation.buying(0);});
-pic2_1_2_2.addEventListener("click", function(){pinkautomation.buying(1);});
-pic2_1_2_3.addEventListener("click", function(){pinkautomation.buying(2);});
-pic2_1_2_4.addEventListener("click", function(){pinkautomation.buying(3);});
+pic1_1_1.addEventListener("click", function(){blueupgrades.buying(0);});
+pic1_1_2.addEventListener("click", function(){blueupgrades.buying(1);});
+pic1_1_3.addEventListener("click", function(){blueupgrades.buying(2);});
+pic1_1_4.addEventListener("click", function(){blueupgrades.buying(3);});
+pic1_2_1.addEventListener("click", function(){blueautomation.buying(0);});
+pic1_2_2.addEventListener("click", function(){blueautomation.buying(1);});
+pic1_2_3.addEventListener("click", function(){blueautomation.buying(2);});
+pic1_2_4.addEventListener("click", function(){blueautomation.buying(3);});
+pic2_1_1.addEventListener("click", function(){pinkupgrades.buying(0);});
+pic2_1_2.addEventListener("click", function(){pinkupgrades.buying(1);});
+pic2_1_3.addEventListener("click", function(){pinkupgrades.buying(2);});
+pic2_1_4.addEventListener("click", function(){pinkupgrades.buying(3);});
+pic2_2_1.addEventListener("click", function(){pinkautomation.buying(0);});
+pic2_2_2.addEventListener("click", function(){pinkautomation.buying(1);});
+pic2_2_3.addEventListener("click", function(){pinkautomation.buying(2);});
+pic2_2_4.addEventListener("click", function(){pinkautomation.buying(3);});
 
 window.onload = function() {
 	loadGame();

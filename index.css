@@ -22,6 +22,7 @@ body {
 	width: 12%;
 	padding: 1px;
 	padding-right: 5px;
+	padding-left: 8px;
 	float: left;
 	overflow: auto;
 }
@@ -40,11 +41,11 @@ body {
 	margin: 1px;
 	padding: 1px;
 	display: block;
-	width: 98%;
+	width: 95%;
 	border-radius: 10px;
 }
 .navigation:hover {
-	transform: scale(1.11);
+	transform: scale(1.09);
 }
 .navigation:active {
 	transform: scale(0.97);
