@@ -365,10 +365,23 @@ function exportGame() {
   a.click();
 }
 
+async function importGame() {
+    try {
+        const [fileHandle] = await window.showOpenFilePicker();
+        const file = await fileHandle.getFile();
+        const contents = await file.text();
+        localStorage.setItem("gameSave", contents);
+        loadGame();
+    } catch (err) {
+        console.errror(err);
+    }
+}
+
 var bttn1 = document.getElementById("b1");
 var bttn2 = document.getElementById("b2");
 var bttn3 = document.getElementById("b3");
 var bttn4 = document.getElementById("b4");
+var bttn95 = document.getElementById("b95");
 var bttn96 = document.getElementById("b96");
 var bttn97 = document.getElementById("b97");
 var bttn98 = document.getElementById("b98");
@@ -395,6 +408,7 @@ bttn1.addEventListener("click", function(){navigate('slimes');});
 bttn2.addEventListener("click", function(){navigate('automation');});
 bttn3.addEventListener("click", function(){navigate('upgrades');});
 bttn4.addEventListener("click", function(){navigate('efficiencies')});
+bttn95.addEventListener("click", function(){importGame()});
 bttn96.addEventListener("click", function(){exportGame()});
 bttn97.addEventListener("click", function(){navigate('achievements')});
 bttn98.addEventListener("click", function(){saveGame(); alert("Your progress has been saved!")});
